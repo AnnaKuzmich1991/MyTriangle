@@ -9,25 +9,28 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.runners.Parameterized.*;
 
 @RunWith(value = Parameterized.class)
 public class TriangleTest {
     private Integer a, b, c;
     private boolean isTriangle;
 
-    @Parameterized.Parameters
+    @Parameters
     public static Collection testDataIsTriangleExists() {
         return Arrays.asList(
                 new Object[][]{
-                        {7, 10, 9, true},
-                        {7, 10, 10, true},
-                        {7, 7, 7, true},
-                        {5, 5, 10, false},
-                        {0, 1, 2, false},
-                        {1, 0, 2, false},
-                        {1, 2, 0, false},
-                        {-1, 2, 3, false},
-                        {1, -2, 3, false},
+                        {6, 12, 8, true},
+                        {2, 12, 12, true},
+                        {2, 8, 8, true},
+
+                        {2, 8, 12, false},
+                        {0, 4, 6, false},
+                        {3, 0, 7, false},
+                        {3, 6, 0, false},
+
+                        {-3, 2, 3, false},
+                        {7, -4, 3, false},
                 }
         );
     }
